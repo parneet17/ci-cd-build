@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  tasks:
+   - name: checking ping connectivity of Ansible slavve
+     ping:
+
+   - name : executing maven build file
+     shell: java -jar /var/lib/jenkins/workspace/maven-build/target/zilla-0.1-jar-with-dependencies.jar
+     register: result
+    
+   - debug:
+      var: result
+  
